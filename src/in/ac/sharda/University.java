@@ -8,10 +8,13 @@ public class University {
 	                        = new TreeSet<>();
 
 	public boolean addDepartment(Department d) {
-		departments.add(d);
+		return departments.add(d);
 	}
 	public void printDepartment() {
 		departments.parallelStream()
 		.forEach(s -> System.out.println(s.getId()));	
+	}
+	public void resultDeclared() {
+		System.out.println("result just arrived!!");
 	}
 }

@@ -6,14 +6,20 @@ public class UniversityDemo {
 		
 		University u = new University();
 		for(int i =1; i<21; i++) {
-			boolean added = u.addDepartment(new Department(i));
+			Department d = new Department(i);
+			boolean added = u.addDepartment(d);
 			if(added){
 				System.out.println("Department added");
-			}else{
+				for(int j = 1; j < 21; j++) {
+					d.addStudent(new Student(j,"Name"+i+j, null));
+				}
+			}
+			else{
 				System.out.println("not added");
 			}
 		}
 		u.printDepartment();
+		u.resultDeclared();
 
 	}
 

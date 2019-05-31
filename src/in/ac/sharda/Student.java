@@ -1,15 +1,15 @@
 package in.ac.sharda;
 
-public class Student {
+public class Student implements IResultArrivedListener{
 
 	private final int rollNumber;
 	private final String name;
 	private String email;
     
-	public Student(int rn, String n, String email){
+	public Student(int rn, String n, String email ){
 		this.rollNumber = rn;
 		this.name = n;
-		this.email = email;
+	    this.email = email;
 	}
 
 	public void attendance() {
@@ -37,5 +37,14 @@ public class Student {
 		
 		return false;
 	}
-	
+	@Override 
+	public void resultDeclared() {
+		System.out.println("Hey result is Out!!");
+		
+	}
+
+	public Object resultArrived() {
+		return null;
+
+	}
 }
